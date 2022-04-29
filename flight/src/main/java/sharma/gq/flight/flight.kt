@@ -18,6 +18,14 @@ object flight {
             Glide.with(context).load(string).into(imageView);
         }
     }
+       fun fragment(fragment : Fragment, url: URL, drawable: Drawable, imageView: ImageView){
+        Glide
+            .with(fragment)
+            .load(url)
+            .centerCrop()
+            .placeholder(drawable)
+            . into (imageView);
+    }
 }
 
 
