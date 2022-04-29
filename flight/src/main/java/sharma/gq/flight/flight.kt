@@ -1,7 +1,9 @@
 package sharma.gq.flight
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import java.net.URL
@@ -19,6 +21,15 @@ object flight {
         }
     }
        fun fragment(fragment : Fragment, url: URL, drawable: Drawable, imageView: ImageView){
+        Glide
+            .with(fragment)
+            .load(url)
+            .centerCrop()
+            .placeholder(drawable)
+            . into (imageView);
+    }
+
+    fun fragmentRunner(fragment : Fragment, url: URL, drawable: Drawable, imageView: ImageView){
         Glide
             .with(fragment)
             .load(url)
